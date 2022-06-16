@@ -25,9 +25,9 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Publish
       run: dotnet publish MvcWebApplication/MvcWebApplication.csproj -c Release -o website
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.2.2
-      with:
-        name: website
-        path: MvcWebApp/MvcWebApplication/website/**
-        if-no-files-found: error
+    - - name: Upload a Build Artifact
+  uses: actions/upload-artifact@v2.2.4
+  with:
+      name: website
+      path: /home/runner/work/MvcWebApp/MvcWebApp/website/**
+      if-no-files-found: error
